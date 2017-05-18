@@ -1,2 +1,2 @@
 # shpr
-Shpr application
+This is the GitHub repo for Shpr
