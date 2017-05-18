@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.jltechnologies.myapplication.MainActivity">
+    <item
+        android:id="@+id/action_clear_strokes"
+        android:checkable="false"
+        android:orderInCategory="100"
+        android:title="@string/action_clear_strokes"
+        app:showAsAction="never" />
+</menu>
