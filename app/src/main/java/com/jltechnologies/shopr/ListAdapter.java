@@ -46,48 +46,48 @@ public class ListAdapter extends BaseAdapter{
         if(convertView == null){
             convertView = LayoutInflater.from(mContext).inflate(R.layout.list_item,null);
             holder = new ViewHolder();
-            holder.holeLabel = (TextView) convertView.findViewById(R.id.holeLabel);
-            holder.strokeCount = (TextView) convertView.findViewById(R.id.strokeCount);
-            holder.removeStrokeButton = (Button) convertView.findViewById(R.id.removeStrokeButton);
-            holder.addStrokeButton = (Button) convertView.findViewById(R.id.addStrokeButton);
+            holder.productlabel = (TextView) convertView.findViewById(R.id.holeLabel);
+            holder.quantity = (TextView) convertView.findViewById(R.id.strokeCount);
+            holder.removeProductButton = (Button) convertView.findViewById(R.id.removeStrokeButton);
+            holder.addProductButton = (Button) convertView.findViewById(R.id.addStrokeButton);
             holder.addPrice = (TextView) convertView.findViewById(R.id.priceDisplay);
 
             convertView.setTag(holder);
         }else{
             holder = (ViewHolder) convertView.getTag();
         }
-        holder.holeLabel.setText(mProductses.get(i).getLabel());
-        holder.strokeCount.setText(mProductses.get(i).getStrokeCount() + "");
+        holder.productlabel.setText(mProductses.get(i).getLabel());
+        holder.quantity.setText(mProductses.get(i).getProudctCount() + "");
         holder.addPrice.setText("$"+mProductses.get(i).getPrice()+"");
-        holder.removeStrokeButton.setOnClickListener(new View.OnClickListener() {
+        holder.removeProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int updateStrokeCount = mProductses.get(i).getStrokeCount()-1;
+                int updateStrokeCount = mProductses.get(i).getProudctCount()-1;
                 if(updateStrokeCount < 0) {
                     updateStrokeCount = 0;
                 }
-                mProductses.get(i).setStrokeCount(updateStrokeCount);
-                holder.strokeCount.setText(updateStrokeCount + "");
-                MainActivity.updateTotal();
+                mProductses.get(i).setProudctCount(updateStrokeCount);
+                holder.quantity.setText(updateStrokeCount + "");
+                ShoppingCartActivity.updateTotal();
             }
         });
-        holder.addStrokeButton.setOnClickListener(new View.OnClickListener() {
+        holder.addProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int updateStrokeCount = mProductses.get(i).getStrokeCount()+1;
-                mProductses.get(i).setStrokeCount(updateStrokeCount);
-                holder.strokeCount.setText(updateStrokeCount + "");
-                MainActivity.updateTotal();
+                int updateStrokeCount = mProductses.get(i).getProudctCount()+1;
+                mProductses.get(i).setProudctCount(updateStrokeCount);
+                holder.quantity.setText(updateStrokeCount + "");
+                ShoppingCartActivity.updateTotal();
             }
         });
         return convertView;
     }
 
     private static class ViewHolder {
-        TextView holeLabel;
-        TextView strokeCount;
-        Button removeStrokeButton;
-        Button addStrokeButton;
+        TextView productlabel;
+        TextView quantity;
+        Button removeProductButton;
+        Button addProductButton;
         TextView addPrice;
     }
 }

@@ -19,13 +19,13 @@ public class Products {
         mLabel = label;
     }
 
-    public int getStrokeCount() {
+    public int getProudctCount() {
         return mQuantity;
     }
     public double getPrice() {return mPrice;}
-    public double getLocation() {return mLocation;}
+    public int getLocation() {return mLocation;}
 
-    public void setStrokeCount(int quantity) {
+    public void setProudctCount(int quantity) {
         mQuantity = quantity;
     }
 

@@ -9,12 +9,21 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.jltechnologies.shopr.MainActivity">
+    tools:context="com.jltechnologies.shopr.ShoppingCartActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/store_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="Garland Shopping List"
+            android:textSize="24sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,18 +67,16 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:checked="true"
-                android:text="Left Entrance"
                 android:onClick="onRadioButtonClicked"
-                />
+                android:text="Left Entrance" />
 
             <RadioButton
                 android:id="@+id/right_radio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Right Entrance"
                 android:onClick="onRadioButtonClicked"
-                />
+                android:text="Right Entrance" />
         </RadioGroup>
 
         <ListView
