@@ -66,7 +66,7 @@ public class FindRoute extends AppCompatActivity {
             }
         });
 
-        ///////////FUNCTION TO SORT LOCATIONS INTO BEST OPTIMAL ORDER GOES HERE
+        ///////////FUNCTION TO SORT LOCATIONS INTO BEST OPTIMAL ORDER GOES HERE, ADD MATRICES TO STORES
 
     }
 
