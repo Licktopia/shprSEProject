@@ -1,12 +1,10 @@
 package com.jltechnologies.shopr;
 
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -38,40 +36,47 @@ public class ShoppingCartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping_cart);
-        ListView list = (ListView) findViewById(android.R.id.list);
-
-
+        ListView list = (ListView) findViewById(android.R.id.list);//list is scrolling view that is dynamically populated
+        /////////bindings
         mTotal = (TextView)findViewById(R.id.total_amount);
-        mSharedPreferences = getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);
-        mEditor = mSharedPreferences.edit();
-        mInventory = new Inventory();
         mFindRoute = (Button)findViewById(R.id.find_route); //initialize find route button
         mStoreTitle = (TextView) findViewById(R.id.store_title); //initialize find route button
-        storeNumber = getIntent().getExtras().getInt("storeNumber"); //gets Store Number from start screen activity
-        mStoreTitle.setText(mInventory.mStores[storeNumber].storeName + " Shopping List");
 
+        mSharedPreferences = getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);//shared preferences saves variable states for when the app is paused or looses focus
+        mEditor = mSharedPreferences.edit();
+
+        mInventory = new Inventory();//create inventory object that gives us access to store products, prices and product locations
+
+
+        storeNumber = getIntent().getExtras().getInt("storeNumber"); //gets Store Number from start screen activity
+
+
+        mStoreTitle.setText(mInventory.mStores[storeNumber].storeName + " Shopping List");//set text for top of screen title  ie "Juliaville Shopping List"
 
 
         int products = 0;
-        for (int i = 0; i < mInventory.mStores[storeNumber].products.length; i++){
+        for (int i = 0; i < mInventory.mStores[storeNumber].products.length; i++){////retrieve saved data from shared preferences
             products = mSharedPreferences.getInt(KEY_STROKECOUNT + i, 0);
             mProductses.add(new Products(mInventory.mStores[storeNumber].products[i] + " :", products,
                     mInventory.mStores[storeNumber].prices[i], mInventory.mStores[storeNumber].location[i]));
         }
-        mListAdapter = new ListAdapter(this, mProductses);
+
+        mListAdapter = new ListAdapter(this, mProductses);////list adapter is adapter class that binds info to the list view
         list.setAdapter(mListAdapter);
-        updateTotal();
-        mFindRoute.setOnClickListener(new View.OnClickListener() {
+
+        updateTotal();//display $$$ Total
+
+        mFindRoute.setOnClickListener(new View.OnClickListener() {//click listener for Find Route Button
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ShoppingCartActivity.this, FindRoute.class);
-                startActivity(intent);
+                Intent intent = new Intent(ShoppingCartActivity.this, FindRouteActivity.class);//state intent to go to Find Route class
+                startActivity(intent);//GO
             }
         });
     }
 
     @Override
-    protected void onPause() {
+    protected void onPause() {//on pause save shopping list
         super.onPause();
         for(int i = 0; i < mInventory.mStores[storeNumber].products.length; i++){
             mEditor.putInt(KEY_STROKECOUNT + i, mProductses.get(i).getProudctCount());
@@ -79,7 +84,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
         mEditor.apply();
     }
 
-    public static void updateTotal(){
+    public static void updateTotal(){//function iterates through shopping list and sets and displays total amount $$$
         double total = 0.0;
         for(int i = 0; i< mInventory.mStores[storeNumber].products.length; i++){
             total += mProductses.get(i).getProudctCount()*mProductses.get(i).getPrice();
@@ -90,7 +95,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
     }
 
-    public void onRadioButtonClicked(View view) {
+    public void onRadioButtonClicked(View view) {//Select Left or Right Entrance
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
 
@@ -129,7 +134,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
             for(Products products : mProductses){
                 products.setProudctCount(0);
             }
-            mListAdapter.notifyDataSetChanged();//updates List Adapter when clear strokes clicked, otherwise data changed but view not refreshed
+            mListAdapter.notifyDataSetChanged();//updates List Adapter when clear cart clicked, otherwise data changed but view not refreshed
             updateTotal();
             return true;
         }

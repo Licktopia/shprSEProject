@@ -6,7 +6,7 @@
     android:layout_gravity="center_vertical"
     android:orientation="vertical"
     android:weightSum="100"
-    tools:context="com.jltechnologies.shopr.FindRoute">
+    tools:context="com.jltechnologies.shopr.FindRouteActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

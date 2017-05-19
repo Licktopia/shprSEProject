@@ -7,23 +7,23 @@ import android.view.View;
 import android.widget.TextView;
 
 public class StartScreenActivity extends AppCompatActivity {
-    private int[] storeTags = {R.id.store1,R.id.store2,R.id.store3,R.id.store4};
-    private TextView[] storeButtons;
+    private int[] storeTags = {R.id.store1,R.id.store2,R.id.store3,R.id.store4};//array that holds the ids of the 4 store text views
+    private TextView[] storeButtons;//array of store text views
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
-        storeButtons = new TextView[storeTags.length];
-        for(int i=0; i < storeTags.length;i++){
-           storeButtons[i] = (TextView)findViewById(storeTags[i]);
+        storeButtons = new TextView[storeTags.length];//initiliaze array
+        for(int i=0; i < storeTags.length;i++){//for each store
+           storeButtons[i] = (TextView)findViewById(storeTags[i]);//binding
             final int finalI = i;
-            storeButtons[i].setOnClickListener(new View.OnClickListener() {
+            storeButtons[i].setOnClickListener(new View.OnClickListener() {//set click listener for each store button
                @Override
                public void onClick(View v) {
-                   Intent intent = new Intent(StartScreenActivity.this, ShoppingCartActivity.class);
-                   intent.putExtra("storeNumber", finalI);
-                   startActivity(intent);
+                   Intent intent = new Intent(StartScreenActivity.this, ShoppingCartActivity.class);//state intent to go to Shopping Cart Activity
+                   intent.putExtra("storeNumber", finalI);//pass store number selected to SC Activity
+                   startActivity(intent);//GO
                }
            });
         }

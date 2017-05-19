@@ -10,11 +10,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by jeff on 12/14/16.
- */
 
-public class ListAdapter extends BaseAdapter{
+public class ListAdapter extends BaseAdapter{//adapter class that binds list_item.xml to each product in array and populates shopping list
     private final Context mContext;
     private final ArrayList<Products> mProductses;
 

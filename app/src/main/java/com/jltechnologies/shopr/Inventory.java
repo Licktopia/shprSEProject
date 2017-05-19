@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Inventory {
 
     public class Store{
-        Store(String sName, String[] productos, double[] precios, int[] loc, String[] locNames){
+        Store(String sName, String[] productos, double[] precios, int[] loc, String[] locNames){//constructor
             storeName = sName;
             products = productos;
             prices = precios;
@@ -50,6 +50,6 @@ public class Inventory {
     Store store4 = new Store("Newton", products4, prices4, location4, locationName4);
 
 
-    public Store[] mStores = {store1,store2,store3,store4};
+    public Store[] mStores = {store1,store2,store3,store4};//array of Stores
 
 }

@@ -11,7 +11,7 @@
         <activity android:name=".ShoppingCartActivity">
 
         </activity>
-        <activity android:name=".FindRoute" />
+        <activity android:name=".FindRouteActivity" />
         <activity android:name=".StartScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

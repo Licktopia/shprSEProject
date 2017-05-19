@@ -1,16 +1,14 @@
 package com.jltechnologies.shopr;
 
-/**
- * Created by jeff on 12/14/16.
- */
 
-public class Products {
+
+public class Products {//Makes a product object
     private  String mLabel;
     private int mQuantity;
     private double mPrice;
     private int mLocation;
 
-
+//getters and setters
     public String getLabel() {
         return mLabel;
     }
@@ -29,7 +27,7 @@ public class Products {
         mQuantity = quantity;
     }
 
-    public Products(String label, int quantity, double price, int location){
+    public Products(String label, int quantity, double price, int location){//constructor
         mLabel=label;
         mQuantity =quantity;
         mPrice = price;
