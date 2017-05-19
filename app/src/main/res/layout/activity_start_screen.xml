@@ -20,7 +20,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Choose a Store......"
+            android:text="Choose a Store"
             android:textSize="30sp" />
     </LinearLayout>
 
@@ -30,7 +30,7 @@
         android:layout_weight="60"
         android:orientation="vertical">
 
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="10dp"
@@ -38,30 +38,30 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"> -->
 
-            <TextView
-                android:id="@+id/store1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:padding="5dp"
-                android:text="1256 Spring Hill Dr. Garland"
-                android:textSize="30sp" />
+        <Button
+            android:id="@+id/store1"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Garland Corner Market \n 1256 Spring Hill Dr., Garland"
+            android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/store2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:padding="5dp"
-                android:text="145 Palmer Expressway  Camarillo"
-                android:textSize="30sp" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/store2"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Market of Choice Camarillo \n 145 Palmer Expressway, Camarillo"
+            android:textSize="15sp" />
+       <!-- </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,31 +69,31 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"> -->
 
-            <TextView
-                android:id="@+id/store3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:padding="5dp"
-                android:text="8567 12th Street  Juliaville"
-                android:textSize="30sp" />
+        <Button
+            android:id="@+id/store3"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Safeway \n 8567 12th Street, Juliaville"
+            android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/store4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:padding="5dp"
-                android:text="4559 Sim Road Newton "
-                android:textSize="30sp" />
+        <Button
+            android:id="@+id/store4"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Super Market \n 4559 Sim Road, Newton "
+            android:textSize="15sp" />
 
-        </LinearLayout>
+       <!-- </LinearLayout> -->
 
     </LinearLayout>
 
@@ -103,4 +103,3 @@
         android:layout_weight="20"
         android:orientation="horizontal"></LinearLayout>
 </LinearLayout>
-
