@@ -79,7 +79,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="5dp"
-            android:text="Safeway \n 8567 12th Street, Juliaville"
+            android:text="Safeway Juliaville \n 8567 12th Street, Juliaville"
             android:textSize="15sp" />
 
         <Button
@@ -90,7 +90,18 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="5dp"
-            android:text="Super Market \n 4559 Sim Road, Newton "
+            android:text="Newton Super Market \n 4559 Sim Road, Newton"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/store5"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Market of Choice Eugene \n 1690 Franklin Blvd, Eugene, OR"
             android:textSize="15sp" />
 
        <!-- </LinearLayout> -->

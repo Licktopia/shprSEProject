@@ -55,6 +55,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
 
         int products = 0;
+        System.out.println(mInventory.mStores[storeNumber].products.length);
         for (int i = 0; i < mInventory.mStores[storeNumber].products.length; i++){////retrieve saved data from shared preferences
             products = mSharedPreferences.getInt(KEY_STROKECOUNT + i, 0);
             mProductses.add(new Products(mInventory.mStores[storeNumber].products[i] + " :", products,
