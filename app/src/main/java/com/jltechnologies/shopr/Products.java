@@ -28,8 +28,8 @@ public class Products {//Makes a product object
     }
 
     public Products(String label, int quantity, double price, int location){//constructor
-        mLabel=label;
-        mQuantity =quantity;
+        mLabel = label;
+        mQuantity = quantity;
         mPrice = price;
         mLocation = location;
 

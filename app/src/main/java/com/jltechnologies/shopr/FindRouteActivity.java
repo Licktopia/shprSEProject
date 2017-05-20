@@ -76,21 +76,21 @@ public class FindRouteActivity extends AppCompatActivity {
     }
 
     private void setRouteText(int count, ArrayList<Integer> locationsToVisit){//function puts text for the current location and next location such as "Now at Aisle 1" and "Go to Bakery"
-        String nextText = "Next go to ";
+        String nextText = "Next go to: ";
         String currentText = ShoppingCartActivity.mInventory.mStores[ShoppingCartActivity.storeNumber].locationNames[locationsToVisit.get(count)-1];
-        mAtText.setText("You are at the " + currentText);
+        mAtText.setText("You are at: " + currentText);
         if(locationsToVisit.size()>0) {
             if(count!=locationsToVisit.size()-1) {
                  nextText += ShoppingCartActivity.mInventory.mStores[ShoppingCartActivity.storeNumber].locationNames[locationsToVisit.get(count + 1) - 1];
             }
             else{
-                 nextText = "Have a safe trip home";
+                 nextText = "Have a safe trip home.";
             }
             mGoToText.setText(nextText);
         }
     }
     private void setDirectionsText(int count, ArrayList<Integer> locationsToVisit){//function sets text such as "pick up 1 Tylenol" for current location
-        String directionsText = "In this area pick up ";
+        String directionsText = "In this area pick up:\n";
 
         if(locationsToVisit.size()>0) {
             if(count!=locationsToVisit.size()-1) {
@@ -98,7 +98,7 @@ public class FindRouteActivity extends AppCompatActivity {
                     directionsText="Welcome to the store.";
                 }
                 else if(count ==locationsToVisit.size()-1){
-                    directionsText = "You are all finished";
+                    directionsText = "You are all finished.";
                 }
                 else {
                     for (int i = 0; i < ShoppingCartActivity.mProductses.size(); i++) {
@@ -112,7 +112,7 @@ public class FindRouteActivity extends AppCompatActivity {
                 }
             }
             else{
-                directionsText = "You are all finished";
+                directionsText = "You are all finished.";
             }
             mDirectionsText.setText(directionsText);
         }
