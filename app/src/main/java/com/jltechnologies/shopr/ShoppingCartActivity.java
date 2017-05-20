@@ -1,6 +1,8 @@
 package com.jltechnologies.shopr;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -24,12 +26,13 @@ public class ShoppingCartActivity extends AppCompatActivity {
     private SharedPreferences.Editor mEditor;
     public static ArrayList <Products> mProductses = new ArrayList<Products>();
     private ListAdapter mListAdapter;
-    public static Inventory mInventory;
+    public static Stores mInventory;
     public static TextView mTotal;
     private Button mFindRoute;
     private TextView mStoreTitle;
     public static boolean leftEntrance = true;
     static int storeNumber;
+    private boolean backout;
 
 
     @Override
@@ -44,8 +47,8 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
         mSharedPreferences = getSharedPreferences(PREFS_FILE, Context.MODE_PRIVATE);//shared preferences saves variable states for when the app is paused or looses focus
         mEditor = mSharedPreferences.edit();
-
-        mInventory = new Inventory();//create inventory object that gives us access to store products, prices and product locations
+        backout = false;
+        mInventory = new Stores();//create inventory object that gives us access to store products, prices and product locations
 
 
         storeNumber = getIntent().getExtras().getInt("storeNumber"); //gets Store Number from start screen activity
@@ -79,8 +82,10 @@ public class ShoppingCartActivity extends AppCompatActivity {
     @Override
     protected void onPause() {//on pause save shopping list
         super.onPause();
-        for(int i = 0; i < mInventory.mStores[storeNumber].products.length; i++){
-            mEditor.putInt(KEY_STROKECOUNT + i, mProductses.get(i).getProudctCount());
+        if(!backout) {
+            for (int i = 0; i < mInventory.mStores[storeNumber].products.length; i++) {
+                mEditor.putInt(KEY_STROKECOUNT + i, mProductses.get(i).getProudctCount());
+            }
         }
         mEditor.apply();
     }
@@ -141,5 +146,18 @@ public class ShoppingCartActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        backout = true;
+        mProductses.clear();
+        mListAdapter.notifyDataSetChanged();
+        mEditor.clear();
+        mEditor.apply();
+
+
+        Intent intent = new Intent(ShoppingCartActivity.this, StartScreenActivity.class);//state intent to go to Find Route class
+        startActivity(intent);//GO
     }
 }

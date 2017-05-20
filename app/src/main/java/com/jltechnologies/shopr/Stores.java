@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by do_de on 5/18/2017.
  */
 
-public class Inventory {
+public class Stores {
 
     public class Store{
         Store(String sName, String[] productos, double[] precios, int[] loc, String[] locNames){//constructor
