@@ -65,6 +65,12 @@ public class Stores {
     Store store5 = new Store("Market of Choice Eugene", products5, prices5, location5, locationName5,pictureTags5);
 
 
-    public Store[] mStores = {store1,store2,store3,store4,store5};//array of Stores
+    public String[]   products6 = {"Eggs","Milk","Orange Juice","Ham","Eyedrops","Raspberries","Sausage","Paper Towels","Tylenol","Bagels","Bread","Donuts","Beer","Lean Beef","Cream Cheese","Ice Cream"};
+    public double[]   prices6   = {2.49,   1.99,  2.99,          3.99, 5.49,      4.99,         2.99,     5.49,          6.99,     0.79,    1.19,   0.59,    9.99,  11.49,      3.49,          4.99      };
+    public int[]      location6 = {10,     10,    10,            8,    6,         4,            8,        11,            6,        7,       7,      7,       9,     5,          10,            10,       };
+    public String[]   locationName6 = {"Left Entrance", "Cashier", "Right Entrance", "Produce", "Fresh Meat", "Pharmacy", "Bakery", "Deli", "Aisle 1", "Aisle 2", "Aisle 3", "Aisle 4", "Aisle 5", "Aisle 6"};
+    Store store6 = new Store("Market of Choice Corvallis", products6, prices6, location6, locationName6);
+
+    public Store[] mStores = {store1,store2,store3,store4,store5,store6};//array of Stores
 
 }
