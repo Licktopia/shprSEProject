@@ -1,19 +1,26 @@
 package com.jltechnologies.shopr;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 
 public class ListAdapter extends BaseAdapter{//adapter class that binds list_item.xml to each product in array and populates shopping list
-    private final Context mContext;
-    private final ArrayList<Products> mProductses;
+
+
+    Context mContext;
+    public ListAdapter(Context context) {
+        this.mContext = context;
+    }
+    private ArrayList<Products> mProductses = new ArrayList<>();
 
 
     public ListAdapter(Context context, ArrayList<Products> productses){
@@ -48,11 +55,16 @@ public class ListAdapter extends BaseAdapter{//adapter class that binds list_ite
             holder.removeProductButton = (Button) convertView.findViewById(R.id.removeStrokeButton);
             holder.addProductButton = (Button) convertView.findViewById(R.id.addStrokeButton);
             holder.addPrice = (TextView) convertView.findViewById(R.id.priceDisplay);
+            holder.foodPic = (ImageView)convertView.findViewById(R.id.food_pic);
+            holder.department = (TextView)convertView.findViewById(R.id.department);
 
             convertView.setTag(holder);
         }else{
             holder = (ViewHolder) convertView.getTag();
         }
+        Drawable drawable = mContext.getResources().getDrawable(mProductses.get(i).getPicture());
+        holder.foodPic.setImageDrawable(drawable);
+        holder.department.setText(mProductses.get(i).getLocationName());
         holder.productlabel.setText(mProductses.get(i).getLabel());
         holder.quantity.setText(mProductses.get(i).getProudctCount() + "");
         holder.addPrice.setText("$"+mProductses.get(i).getPrice()+"");
@@ -86,5 +98,7 @@ public class ListAdapter extends BaseAdapter{//adapter class that binds list_ite
         Button removeProductButton;
         Button addProductButton;
         TextView addPrice;
+        ImageView foodPic;
+        TextView department;
     }
 }

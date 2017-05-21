@@ -1,36 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="100"
     tools:context="com.jltechnologies.shopr.FindRouteActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha=".7"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/grocery" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="20"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="100">
 
-        <TextView
-            android:id="@+id/textView"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Choose a Store"
-            android:textSize="30sp" />
-    </LinearLayout>
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="20"
+            android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="60"
-        android:orientation="vertical">
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:alpha=".85"
+                android:background="#329d53"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="Choose a Store"
+                android:textColor="@android:color/background_light"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
-        <!--<LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="60"
+            android:orientation="vertical">
+
+            <!--<LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="10dp"
@@ -40,28 +64,48 @@
             android:layout_weight="1"
             android:orientation="horizontal"> -->
 
-        <Button
-            android:id="@+id/store1"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="5dp"
-            android:text="Garland Corner Market \n 1256 Spring Hill Dr., Garland"
-            android:textSize="15sp" />
+            <Button
+                android:id="@+id/store1"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:alpha=".85"
+                android:background="#ABD03A"
+                android:elevation="0dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Garland Corner Market \n 1256 Spring Hill Dr., Garland"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/store2"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="5dp"
-            android:text="Market of Choice Camarillo \n 145 Palmer Expressway, Camarillo"
-            android:textSize="15sp" />
-       <!-- </LinearLayout>
+            <Button
+                android:id="@+id/store2"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:alpha=".85"
+                android:background="#1E91D6"
+                android:elevation="0dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Market of Choice Camarillo \n 145 Palmer Expressway, Camarillo"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <!-- </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -71,46 +115,78 @@
             android:layout_weight="1"
             android:orientation="horizontal"> -->
 
-        <Button
-            android:id="@+id/store3"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="5dp"
-            android:text="Safeway Juliaville \n 8567 12th Street, Juliaville"
-            android:textSize="15sp" />
+            <Button
+                android:id="@+id/store3"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:alpha=".85"
+                android:background="#ea3f6a"
+                android:elevation="0dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Safeway Juliaville \n 8567 12th Street, Juliaville"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/store4"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="5dp"
-            android:text="Newton Super Market \n 4559 Sim Road, Newton"
-            android:textSize="15sp" />
+            <Button
+                android:id="@+id/store4"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:alpha=".85"
+                android:background="#F2CA08"
+                android:elevation="0dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Newton Super Market \n 4559 Sim Road, Newton"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/store5"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="5dp"
-            android:text="Market of Choice Eugene \n 1690 Franklin Blvd, Eugene, OR"
-            android:textSize="15sp" />
+            <Button
+                android:id="@+id/store5"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:alpha=".85"
+                android:background="#E18335"
+                android:elevation="0dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Market of Choice Eugene \n 1690 Franklin Blvd, Eugene, OR"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-       <!-- </LinearLayout> -->
+            <!-- </LinearLayout> -->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="20"
+            android:orientation="horizontal"></LinearLayout>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="20"
-        android:orientation="horizontal"></LinearLayout>
-</LinearLayout>
+</RelativeLayout>

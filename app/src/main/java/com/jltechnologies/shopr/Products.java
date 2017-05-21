@@ -7,6 +7,8 @@ public class Products {//Makes a product object
     private int mQuantity;
     private double mPrice;
     private int mLocation;
+    private int mPicture;
+    private String mLocationName;
 
 //getters and setters
     public String getLabel() {
@@ -26,12 +28,16 @@ public class Products {//Makes a product object
     public void setProudctCount(int quantity) {
         mQuantity = quantity;
     }
+    public int getPicture(){return mPicture;}
+    public String getLocationName(){return mLocationName;}
 
-    public Products(String label, int quantity, double price, int location){//constructor
+    public Products(String label, int quantity, double price, int location, int pic, String locName){//constructor
         mLabel=label;
         mQuantity =quantity;
         mPrice = price;
         mLocation = location;
+        mPicture = pic;
+        mLocationName = locName;
 
     }
 }

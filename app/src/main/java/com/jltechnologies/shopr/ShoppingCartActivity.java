@@ -33,6 +33,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
     public static boolean leftEntrance = true;
     static int storeNumber;
     private boolean backout;
+    private static boolean clearOut;
 
 
     @Override
@@ -49,26 +50,43 @@ public class ShoppingCartActivity extends AppCompatActivity {
         mEditor = mSharedPreferences.edit();
         backout = false;
         mInventory = new Stores();//create inventory object that gives us access to store products, prices and product locations
-
-
+        clearOut = getIntent().getExtras().getBoolean("clearCart");
         storeNumber = getIntent().getExtras().getInt("storeNumber"); //gets Store Number from start screen activity
 
 
-        mStoreTitle.setText(mInventory.mStores[storeNumber].storeName + " Shopping List");//set text for top of screen title  ie "Juliaville Shopping List"
+
+        mStoreTitle.setText(mInventory.mStores[storeNumber].storeName);//set text for top of screen title  ie "Juliaville Shopping List"
 
 
         int products = 0;
-        System.out.println(mInventory.mStores[storeNumber].products.length);
-        for (int i = 0; i < mInventory.mStores[storeNumber].products.length; i++){////retrieve saved data from shared preferences
-            products = mSharedPreferences.getInt(KEY_STROKECOUNT + i, 0);
-            mProductses.add(new Products(mInventory.mStores[storeNumber].products[i] + " :", products,
-                    mInventory.mStores[storeNumber].prices[i], mInventory.mStores[storeNumber].location[i]));
+        if(clearOut){
+            mProductses.clear();
         }
+        System.out.println(mInventory.mStores[storeNumber].products.length);
+
+        for (int i = 0; i < mInventory.mStores[storeNumber].products.length; i++) {////retrieve saved data from shared preferences
+                if(!clearOut) {
+                    products = mSharedPreferences.getInt(KEY_STROKECOUNT + i, 0);
+                }
+                else{
+                    products=0;
+                }
+                mProductses.add(new Products(mInventory.mStores[storeNumber].products[i], products,
+                        mInventory.mStores[storeNumber].prices[i], mInventory.mStores[storeNumber].location[i],
+                        mInventory.mStores[storeNumber].picTags[i],mInventory.mStores[storeNumber].locationNames[mInventory.mStores[storeNumber].location[i]-1]));
+            }
 
         mListAdapter = new ListAdapter(this, mProductses);////list adapter is adapter class that binds info to the list view
         list.setAdapter(mListAdapter);
 
-        updateTotal();//display $$$ Total
+        if(!clearOut) {
+            updateTotal();//display $$$ Total
+        }
+        else{
+            mTotal.setText("$0.00");
+        }
+        clearOut = false;
+
 
         mFindRoute.setOnClickListener(new View.OnClickListener() {//click listener for Find Route Button
             @Override
@@ -92,12 +110,15 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
     public static void updateTotal(){//function iterates through shopping list and sets and displays total amount $$$
         double total = 0.0;
-        for(int i = 0; i< mInventory.mStores[storeNumber].products.length; i++){
-            total += mProductses.get(i).getProudctCount()*mProductses.get(i).getPrice();
+        if(!clearOut) {
+            for (int i = 0; i < mInventory.mStores[storeNumber].products.length; i++) {
+                total += mProductses.get(i).getProudctCount() * mProductses.get(i).getPrice();
+            }
         }
         DecimalFormat df = new DecimalFormat("#.##");
         total = Double.valueOf(df.format(total));
         mTotal.setText("$"+total);
+        clearOut=false;
 
     }
 
@@ -150,14 +171,19 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        backout = true;
-        mProductses.clear();
-        mListAdapter.notifyDataSetChanged();
-        mEditor.clear();
-        mEditor.apply();
+        clearList();
 
 
         Intent intent = new Intent(ShoppingCartActivity.this, StartScreenActivity.class);//state intent to go to Find Route class
         startActivity(intent);//GO
+    }
+
+    private void clearList() {
+        backout = true;
+        clearOut = false;
+        mProductses.clear();
+        mListAdapter.notifyDataSetChanged();
+        mEditor.clear();
+        mEditor.apply();
     }
 }

@@ -15,6 +15,7 @@ public class StartScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
         storeButtons = new TextView[storeTags.length];//initiliaze array
+        final boolean clearOut = true;
         for(int i=0; i < storeTags.length;i++){//for each store
            storeButtons[i] = (TextView)findViewById(storeTags[i]);//binding
             final int finalI = i;
@@ -23,6 +24,7 @@ public class StartScreenActivity extends AppCompatActivity {
                public void onClick(View v) {
                    Intent intent = new Intent(StartScreenActivity.this, ShoppingCartActivity.class);//state intent to go to Shopping Cart Activity
                    intent.putExtra("storeNumber", finalI);//pass store number selected to SC Activity
+                   intent.putExtra("clearCart", clearOut);
                    startActivity(intent);//GO
                }
            });
