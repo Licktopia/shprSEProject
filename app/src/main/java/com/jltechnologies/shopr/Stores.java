@@ -69,7 +69,8 @@ public class Stores {
     public double[]   prices6   = {2.49,   1.99,  2.99,          3.99, 5.49,      4.99,         2.99,     5.49,          6.99,     0.79,    1.19,   0.59,    9.99,  11.49,      3.49,          4.99      };
     public int[]      location6 = {10,     10,    10,            8,    6,         4,            8,        11,            6,        7,       7,      7,       9,     5,          10,            10,       };
     public String[]   locationName6 = {"Left Entrance", "Cashier", "Right Entrance", "Produce", "Fresh Meat", "Pharmacy", "Bakery", "Deli", "Aisle 1", "Aisle 2", "Aisle 3", "Aisle 4", "Aisle 5", "Aisle 6"};
-    Store store6 = new Store("Market of Choice Corvallis", products6, prices6, location6, locationName6);
+    public int[]      pictureTags6 = {foodTags[0],foodTags[1],foodTags[2],foodTags[3],foodTags[4],foodTags[5],foodTags[6],foodTags[7],foodTags[8],foodTags[9],foodTags[10],foodTags[11],foodTags[12]};
+    Store store6 = new Store("Market of Choice Corvallis", products6, prices6, location6, locationName6,pictureTags6);
 
     public Store[] mStores = {store1,store2,store3,store4,store5,store6};//array of Stores
 
