@@ -1,10 +1,17 @@
 package com.jltechnologies.shopr;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.GridLayout;
+import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -17,6 +24,7 @@ public class FindRouteActivity extends AppCompatActivity {
     TextView mGoToText; //Next location text display
     TextView mDirectionsText; //Instructions text display
     Button nextButton; //Next Button
+    GridLayout gridLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +35,11 @@ public class FindRouteActivity extends AppCompatActivity {
         nextButton = (Button)findViewById(R.id.next_button);
         nextButton.setVisibility(View.VISIBLE);
         mDirectionsText = (TextView)findViewById(R.id.directions_text);
+
         //////End Bindings
+
+
+
 
         int[] locations = new int[ShoppingCartActivity.mProductses.size()];//will store 0 if location not visited, location number if visited
         Arrays.fill(locations,0);//fills locations array to 0
@@ -80,6 +92,7 @@ public class FindRouteActivity extends AppCompatActivity {
         });
 
         ///////////FUNCTION TO SORT LOCATIONS INTO BEST OPTIMAL ORDER GOES HERE, ADD MATRICES TO STORES
+
 
     }
 
@@ -155,6 +168,8 @@ public class FindRouteActivity extends AppCompatActivity {
             }
             mDirectionsText.setText(directionsText);
         }
+
+
 
     }
 

@@ -18,7 +18,7 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="30"
+        android:layout_weight="39"
         android:orientation="vertical"
         android:weightSum="100">
 
@@ -46,7 +46,7 @@
         android:id="@+id/priceDisplay"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="15"
+        android:layout_weight="12"
         android:gravity="center"
         android:text="$4.99" />
 
@@ -63,13 +63,25 @@
         android:id="@+id/removeStrokeButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="15"
-        android:text="-" />
+        android:layout_gravity="center_vertical"
+        android:layout_margin="8dp"
+        android:layout_weight="12"
+        android:background="@android:color/background_light"
+        android:gravity="center"
+        android:text="-"
+        android:textColor="@android:color/background_dark" />
 
     <Button
         android:id="@+id/addStrokeButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="15"
-        android:text="+" />
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="12"
+        android:background="@android:color/background_light"
+        android:gravity="center"
+        android:text="+"
+        android:textColor="@android:color/background_dark" />
 </LinearLayout>

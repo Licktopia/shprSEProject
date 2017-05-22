@@ -1,0 +1,56 @@
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ABD03A"
+    android:contentInsetLeft="3dp"
+    android:contentInsetRight="3dp"
+
+
+    android:contentInsetStart="3dp"
+    android:visibility="visible"
+    app:contentInsetLeft="3dp"
+    app:contentInsetRight="3dp"
+    app:contentInsetStart="3dp"
+    app:contentInsetStartWithNavigation="3dp"
+
+    >
+
+    <RelativeLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="visible"
+        android:weightSum="100">
+
+        <ImageView
+            android:id="@+id/home_menu_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentTop="true"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/store_title"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/home_menu_button"
+            android:layout_toRightOf="@+id/home_menu_button"
+            android:gravity="center"
+            android:text="Safeway Juliaville"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.Toolbar>
+
