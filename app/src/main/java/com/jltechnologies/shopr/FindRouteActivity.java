@@ -1,29 +1,23 @@
 package com.jltechnologies.shopr;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.GridLayout;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
-import static android.view.View.GONE;
 
 public class FindRouteActivity extends AppCompatActivity {
     TextView mAtText; //Current location text display
     TextView mGoToText; //Next location text display
     TextView mDirectionsText; //Instructions text display
     Button nextButton; //Next Button
+    Chronometer mTimer;//Display shopping time
     GridLayout gridLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +29,11 @@ public class FindRouteActivity extends AppCompatActivity {
         nextButton = (Button)findViewById(R.id.next_button);
         nextButton.setVisibility(View.VISIBLE);
         mDirectionsText = (TextView)findViewById(R.id.directions_text);
-
+        mTimer = (Chronometer)findViewById(R.id.shopping_timer);
         //////End Bindings
 
-
-
+        mTimer.start();//Start shopping trip time
+        mTimer.setFormat("Time at store - %s");//Set format
 
         int[] locations = new int[ShoppingCartActivity.mProductses.size()];//will store 0 if location not visited, location number if visited
         Arrays.fill(locations,0);//fills locations array to 0
@@ -82,6 +76,7 @@ public class FindRouteActivity extends AppCompatActivity {
                     nextButton.setText("Done");
                     setRouteText(counter[0], locationsToVisit);
                     setDirectionsText(counter[0],locationsToVisit);
+                    mTimer.stop();//Stop timer at cashier to get total time for trip
                 }
                 else{
                     Intent intent = new Intent(FindRouteActivity.this, StartScreenActivity.class);//state intent to go to Find Route class
