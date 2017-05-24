@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="20"
+        android:layout_weight="15"
         android:orientation="horizontal">
 
         <TextView
@@ -30,7 +31,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center_vertical"
-        android:layout_weight="60"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_weight="75"
         android:orientation="vertical"
         android:weightSum="100">
 
@@ -39,20 +42,139 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_alignParentBottom="false"
-            android:layout_alignParentTop="true"
-            android:layout_weight="33"
+            android:layout_alignParentTop="false"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="18"
             android:gravity="center"
+            android:text="You are at the Left Entrance"
             android:textSize="30sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40">
+
+            <ImageView
+                android:id="@+id/store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:srcCompat="@drawable/store" />
+
+            <ImageView
+                android:id="@+id/aisle_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/aisle_3"
+                android:layout_toLeftOf="@+id/bakery"
+                android:layout_toStartOf="@+id/bakery"
+                app:srcCompat="@drawable/aisle_5" />
+
+            <ImageView
+                android:id="@+id/aisle_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/aisle_1"
+                android:layout_centerHorizontal="true"
+                app:srcCompat="@drawable/aisle_3" />
+
+            <ImageView
+                android:id="@+id/aisle_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/aisle_3"
+                android:layout_alignStart="@+id/aisle_3"
+                android:layout_alignTop="@+id/aisle_2"
+                app:srcCompat="@drawable/aisle_4" />
+
+            <ImageView
+                android:id="@+id/bakery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/store"
+                android:layout_alignRight="@+id/store"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/bakery" />
+
+            <ImageView
+                android:id="@+id/aisle_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/aisle_4"
+                android:layout_toLeftOf="@+id/bakery"
+                android:layout_toStartOf="@+id/bakery"
+                app:srcCompat="@drawable/aisle_6" />
+
+            <ImageView
+                android:id="@+id/pharmacy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/store"
+                android:layout_alignStart="@+id/store"
+                android:layout_alignTop="@+id/bakery"
+                app:srcCompat="@drawable/pharmacy" />
+
+            <ImageView
+                android:id="@+id/left_entrance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/store"
+                android:layout_alignLeft="@+id/store"
+                android:layout_alignStart="@+id/store"
+                android:layout_marginLeft="26dp"
+                android:layout_marginStart="26dp"
+                app:srcCompat="@drawable/left_entrance" />
+
+            <ImageView
+                android:id="@+id/cashier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/left_entrance"
+                android:layout_centerHorizontal="true"
+                app:srcCompat="@drawable/cashier" />
+
+            <ImageView
+                android:id="@+id/right_entrance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/store"
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp"
+                android:layout_toEndOf="@+id/cashier"
+                android:layout_toRightOf="@+id/cashier"
+                app:srcCompat="@drawable/right_entrance" />
+
+            <ImageView
+                android:id="@+id/aisle_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/aisle_1"
+                android:layout_marginBottom="20dp"
+                android:layout_toEndOf="@+id/pharmacy"
+                android:layout_toRightOf="@+id/pharmacy"
+                app:srcCompat="@drawable/aisle_2" />
+
+            <ImageView
+                android:id="@+id/aisle_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/left_entrance"
+                android:layout_marginBottom="13dp"
+                android:layout_toEndOf="@+id/pharmacy"
+                android:layout_toRightOf="@+id/pharmacy"
+                app:srcCompat="@drawable/aisle_1" />
+
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/directions_text"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_centerInParent="true"
-            android:layout_weight="34"
+            android:layout_weight="17"
             android:gravity="center"
             android:text="Take three eye drops and two medicines"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/goto_text"
@@ -60,14 +182,16 @@
             android:layout_height="0dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="false"
-            android:layout_weight="33"
+            android:layout_weight="15"
             android:gravity="center"
+            android:text="Go to The Pharmacy"
             android:textSize="30sp" />
 
         <Chronometer
             android:id="@+id/shopping_timer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="10"
             android:gravity="center_vertical|center_horizontal|center"
             android:textSize="18sp" />
 
@@ -77,7 +201,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_gravity="center"
-        android:layout_weight="20"
+        android:layout_weight="10"
         android:orientation="horizontal">
 
         <Button
