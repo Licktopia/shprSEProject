@@ -1,9 +1,6 @@
 package com.jltechnologies.shopr;
 
-import android.app.AlertDialog;
-import android.app.LauncherActivity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RadioButton;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -144,7 +140,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
         super.onPause();
         if(!backout) {
             for (int i = 0; i < mInventory.mStores[storeNumber].products.length; i++) {
-                mEditor.putInt(KEY_STROKECOUNT + i, mProductses.get(i).getProudctCount());
+                mEditor.putInt(KEY_STROKECOUNT + i, mProductses.get(i).getProductCount());
             }
         }
         mEditor.apply();
@@ -154,7 +150,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
         double total = 0.0;
         if(!clearOut) {
             for (int i = 0; i < mInventory.mStores[storeNumber].products.length; i++) {
-                total += mProductses.get(i).getProudctCount() * mProductses.get(i).getPrice();
+                total += mProductses.get(i).getProductCount() * mProductses.get(i).getPrice();
             }
         }
         DecimalFormat df = new DecimalFormat("#.##");
@@ -201,7 +197,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
             mEditor.apply();
 
             for(Products products : mProductses){
-                products.setProudctCount(0);
+                products.setProductCount(0);
             }
             mListAdapter.notifyDataSetChanged();//updates List Adapter when clear cart clicked, otherwise data changed but view not refreshed
             updateTotal();

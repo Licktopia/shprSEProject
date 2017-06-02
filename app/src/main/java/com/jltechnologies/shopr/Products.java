@@ -19,13 +19,13 @@ public class Products {//Makes a product object
         mLabel = label;
     }
 
-    public int getProudctCount() {
+    public int getProductCount() {
         return mQuantity;
     }
     public double getPrice() {return mPrice;}
     public int getLocation() {return mLocation;}
 
-    public void setProudctCount(int quantity) {
+    public void setProductCount(int quantity) {
         mQuantity = quantity;
     }
     public int getPicture(){return mPicture;}

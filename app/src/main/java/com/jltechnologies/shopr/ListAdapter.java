@@ -66,16 +66,16 @@ public class ListAdapter extends BaseAdapter{//adapter class that binds list_ite
         holder.foodPic.setImageDrawable(drawable);
         holder.department.setText(mProductses.get(i).getLocationName());
         holder.productlabel.setText(mProductses.get(i).getLabel());
-        holder.quantity.setText(mProductses.get(i).getProudctCount() + "");
+        holder.quantity.setText(mProductses.get(i).getProductCount() + "");
         holder.addPrice.setText("$"+mProductses.get(i).getPrice()+"");
         holder.removeProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int updateStrokeCount = mProductses.get(i).getProudctCount()-1;
+                int updateStrokeCount = mProductses.get(i).getProductCount()-1;
                 if(updateStrokeCount < 0) {
                     updateStrokeCount = 0;
                 }
-                mProductses.get(i).setProudctCount(updateStrokeCount);
+                mProductses.get(i).setProductCount(updateStrokeCount);
                 holder.quantity.setText(updateStrokeCount + "");
                 ShoppingCartActivity.updateTotal();
             }
@@ -83,8 +83,8 @@ public class ListAdapter extends BaseAdapter{//adapter class that binds list_ite
         holder.addProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int updateStrokeCount = mProductses.get(i).getProudctCount()+1;
-                mProductses.get(i).setProudctCount(updateStrokeCount);
+                int updateStrokeCount = mProductses.get(i).getProductCount()+1;
+                mProductses.get(i).setProductCount(updateStrokeCount);
                 holder.quantity.setText(updateStrokeCount + "");
                 ShoppingCartActivity.updateTotal();
             }

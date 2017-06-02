@@ -38,7 +38,7 @@ public class FindRouteActivity extends AppCompatActivity {
         int[] locations = new int[ShoppingCartActivity.mProductses.size()];//will store 0 if location not visited, location number if visited
         Arrays.fill(locations,0);//fills locations array to 0
         for(int i = 0; i < ShoppingCartActivity.mProductses.size(); i++){
-            if(ShoppingCartActivity.mProductses.get(i).getProudctCount()>0) {
+            if(ShoppingCartActivity.mProductses.get(i).getProductCount()>0) {
                 locations[ShoppingCartActivity.mProductses.get(i).getLocation() - 1] = i + 1;//ie locations[3] = 3
             }
         }
@@ -132,12 +132,12 @@ public class FindRouteActivity extends AppCompatActivity {
                 else {
                     for (int i = 0; i < ShoppingCartActivity.mProductses.size(); i++)
                         if (locationsToVisit.get(count) == ShoppingCartActivity.mProductses.get(i).getLocation()) {
-                            if (ShoppingCartActivity.mProductses.get(i).getProudctCount() > 0) {
+                            if (ShoppingCartActivity.mProductses.get(i).getProductCount() > 0) {
                                 mThisLocation.add(ShoppingCartActivity.mProductses.get(i));
                             }
                         }
                     for (int j = 0; j < mThisLocation.size(); j++){
-                                directionsText.append(mThisLocation.get(j).getProudctCount());
+                                directionsText.append(mThisLocation.get(j).getProductCount());
                                 directionsText.append(" ");
                                 directionsText.append(mThisLocation.get(j).getLabel());
                                 //directionsText.delete(directionsText.length()-1, directionsText.length());
