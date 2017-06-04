@@ -49,7 +49,23 @@ public class ProductsTest {
 
     @Test
     public void getProductCount() throws Exception {
-
+        String label = "Bread";
+        int quantity = 3;
+        double price = 1.99;
+        int location = 8;
+        int pic = 2;
+        String locName = "Bakery";
+        Products item = new Products(label,
+                quantity,
+                price,
+                location,
+                pic,
+                locName);
+        assertEquals(3, item.getProductCount());
+        int count = 0;
+        count = item.getProductCount();
+        assertFalse(count == 0);
+        assertEquals(3, count);
     }
 
     @Test
@@ -95,7 +111,21 @@ public class ProductsTest {
 
     @Test
     public void setProductCount() throws Exception {
-
+        String label = "Bread";
+        int quantity = 3;
+        double price = 1.99;
+        int location = 8;
+        int pic = 2;
+        String locName = "Bakery";
+        Products item = new Products(label,
+                quantity,
+                price,
+                location,
+                pic,
+                locName);
+        item.setProductCount(4);
+        assertFalse(item.getProductCount() == 3);
+        assertEquals(4, item.getProductCount());
     }
 
     @Test
@@ -106,13 +136,18 @@ public class ProductsTest {
         int location = 8;
         int pic = 2;
         String locName = "Bakery";
-        Products bread = new Products(label,
+        Products item = new Products(label,
                 quantity,
                 price,
                 location,
                 pic,
                 locName);
-        assertTrue(pic==2);
+        assertTrue(pic == 2);
+        assertEquals(2, item.getPicture());
+        int picnum = 0;
+        picnum = item.getPicture();
+        assertFalse(picnum == 0);
+        assertEquals(2, picnum);
     }
 
 
@@ -130,8 +165,13 @@ public class ProductsTest {
                 location,
                 pic,
                 locName);
+        assertTrue(item.getLocationName() instanceof String);
         assertTrue(item.getLocationName() == "Bakery");
         assertEquals("Bakery", item.getLocationName());
+        String locationName = item.getLocationName();
+        assertTrue(locationName instanceof String);
+        assertFalse(locationName == null);
+        assertEquals("Bakery", locationName);
     }
 
 
