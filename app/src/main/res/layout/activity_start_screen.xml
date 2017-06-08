@@ -306,7 +306,7 @@
                         android:elevation="0dp"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="Market of Choice Corvallis \n 922 NW Circle Blvd, Unit 110, Corvallis, OR"
+                        android:text="Market of Choice Corvallis \n 922 NW Circle Blvd, #110, Corvallis, OR"
                         android:textColor="@android:color/white"
                         android:textSize="16sp"
                         android:textStyle="bold" />
