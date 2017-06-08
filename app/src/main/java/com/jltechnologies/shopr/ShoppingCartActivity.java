@@ -21,6 +21,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class ShoppingCartActivity extends AppCompatActivity {
+    String STORE = "storenumber";
     private static final String PREFS_FILE = "com.jltechnologies.shopr.preferences";
     private static final String KEY_STROKECOUNT = "key_strokecount";
     private SharedPreferences mSharedPreferences;
@@ -213,6 +214,8 @@ public class ShoppingCartActivity extends AppCompatActivity {
 
 
         Intent intent = new Intent(ShoppingCartActivity.this, StartScreenActivity.class);//state intent to go to Find Route class
+        StartScreenActivity.ed.putInt(STORE, storeNumber);
+        StartScreenActivity.ed.apply();
         startActivity(intent);//GO
     }
 
