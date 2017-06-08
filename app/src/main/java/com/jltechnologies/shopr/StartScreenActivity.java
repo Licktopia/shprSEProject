@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class StartScreenActivity extends AppCompatActivity {
     private int[] storeTags = {R.id.store1,R.id.store2,R.id.store3,R.id.store4,R.id.store5, R.id.store6};//array that holds the ids of the store text views
     private TextView[] storeButtons;//array of store text views
-    public static boolean store1Default = true;
+    public static boolean store1Default = false;
     public static boolean store2Default = false;
     public static boolean store3Default = false;
     public static boolean store4Default = false;

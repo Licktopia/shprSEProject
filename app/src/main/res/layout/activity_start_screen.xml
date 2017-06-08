@@ -69,19 +69,229 @@
             android:layout_weight="70"
             android:orientation="vertical">
 
-             <LinearLayout
+            <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="60dp"
+                android:layout_height="fill_parent"
                 android:layout_weight="70"
                 android:orientation="horizontal">
 
-                <RadioButton
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="70"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:layout_width="105dp"
+                        android:layout_height="0dp"
+                        android:layout_margin="4dp"
+                        android:layout_weight="7"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:weightSum="6">
+
+                        <RadioButton
+                            android:id="@+id/default_radio1"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:checked="false"
+                            android:onClick="onRadioButtonClicked" />
+
+                        <RadioButton
+                            android:id="@+id/default_radio2"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:checked="false"
+                            android:onClick="onRadioButtonClicked" />
+
+                        <RadioButton
+                            android:id="@+id/default_radio3"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:checked="false"
+                            android:onClick="onRadioButtonClicked" />
+
+                        <RadioButton
+                            android:id="@+id/default_radio4"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:checked="false"
+                            android:onClick="onRadioButtonClicked" />
+
+                        <RadioButton
+                            android:id="@+id/default_radio5"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:checked="false"
+                            android:onClick="onRadioButtonClicked" />
+
+                        <RadioButton
+                            android:id="@+id/default_radio6"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:checked="false"
+                            android:onClick="onRadioButtonClicked" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="70"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/store1"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:alpha=".85"
+                        android:background="#ABD03A"
+                        android:elevation="0dp"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Garland Corner Market \n 1256 Spring Hill Dr., Garland"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/store2"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:alpha=".85"
+                        android:background="#1E91D6"
+                        android:elevation="0dp"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Market of Choice Camarillo \n 145 Palmer Expressway, Camarillo"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/store3"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:alpha=".85"
+                        android:background="#ea3f6a"
+                        android:elevation="0dp"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Safeway Juliaville \n 8567 12th Street, Juliaville"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/store4"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:alpha=".85"
+                        android:background="#F2CA08"
+                        android:elevation="0dp"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Newton Super Market \n 4559 Sim Road, Newton"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/store5"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:alpha=".85"
+                        android:background="#E18335"
+                        android:elevation="0dp"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Market of Choice Eugene \n 1690 Franklin Blvd, Eugene, OR"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/store6"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:alpha=".85"
+                        android:background="#7c8597"
+                        android:elevation="0dp"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Market of Choice Corvallis \n 922 NW Circle Blvd, #110, Corvallis, OR"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+             </LinearLayout>
+
+
+
+                <!-- <RadioButton
                     android:id="@+id/default_radio1"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_gravity="center_vertical"
-                    android:checked="true"
+                    android:checked="false"
                     android:onClick="onRadioButtonClicked" />
 
                 <Button
@@ -295,7 +505,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
-           </LinearLayout>Z
+           </LinearLayout> -->
 
         </LinearLayout>
 
